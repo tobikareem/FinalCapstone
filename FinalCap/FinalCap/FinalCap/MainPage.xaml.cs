@@ -12,6 +12,8 @@ namespace FinalCap
 		public MainPage()
 		{
 			InitializeComponent();
+			
+			//First Code from git
 		}
 	}
 }
