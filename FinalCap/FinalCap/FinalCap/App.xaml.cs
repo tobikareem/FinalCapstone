@@ -1,12 +1,19 @@
-﻿namespace FinalCap
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+using Xamarin.Forms;
+
+namespace FinalCap
 {
-	public partial class App : Xamarin.Forms.Application
-    {
+	public partial class App : Application
+	{
 		public App ()
 		{
 			InitializeComponent();
 
-			MainPage = new MainPage();
+			MainPage = new FinalCap.MainPage();
 		}
 
 		protected override void OnStart ()

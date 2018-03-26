@@ -1,4 +1,9 @@
-﻿using Xamarin.Forms;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace FinalCap
 {
@@ -7,8 +12,6 @@ namespace FinalCap
 		public MainPage()
 		{
 			InitializeComponent();
-			
-			//First Code from git
 		}
 	}
 }

@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{634F1495-006B-4DBF-B99F-7F816A11F983}</ProjectGuid>
+    <ProjectGuid>{98DC1905-DCE2-4110-8ED2-9DA6CA179B2C}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Exe</OutputType>
     <RootNamespace>FinalCap.iOS</RootNamespace>
@@ -122,5 +122,10 @@
     <PackageReference Include="Xamarin.Forms" Version="2.5.0.122203" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
-  <Import Project="..\FinalCap\FinalCap.projitems" Label="Shared" />
+  <ItemGroup>
+    <ProjectReference Include="..\FinalCap\FinalCap.csproj">
+      <Project>{12C2CD7D-EA74-4A7A-B524-86E891D8AA13}</Project>
+      <Name>FinalCap</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

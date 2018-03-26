@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{25B8A270-3F2F-4F92-BD48-81461D6D6516}</ProjectGuid>
+    <ProjectGuid>{2EF9D9F1-0B9F-42E6-9B88-31B1BA18D3C4}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>FinalCap.UWP</RootNamespace>
@@ -151,7 +151,12 @@
     <PackageReference Include="Xamarin.Forms" Version="2.5.0.122203" />
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.0.1"/>
   </ItemGroup>
-  <Import Project="..\FinalCap\FinalCap.projitems" Label="Shared" />
+  <ItemGroup>
+    <ProjectReference Include="..\FinalCap\FinalCap.csproj">
+      <Project>{12C2CD7D-EA74-4A7A-B524-86E891D8AA13}</Project>
+      <Name>FinalCap</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
