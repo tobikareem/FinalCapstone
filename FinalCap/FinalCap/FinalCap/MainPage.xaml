@@ -6,7 +6,7 @@
    
         
     <TabbedPage.Children>
-        <view:HomePage Title="Courses" Icon="ic_library_books.png"/>
+        <view:CoursePage Title="Courses" Icon="ic_library_books.png"/>
         <view:NotificationPage Title="Notifications" Icon="ic_notifications.png" />
         <view:UploadPage Title="Upload" Icon="ic_file_upload.png" />
         <view:ChatPage Title="Chat" Icon="ic_chat.png" />

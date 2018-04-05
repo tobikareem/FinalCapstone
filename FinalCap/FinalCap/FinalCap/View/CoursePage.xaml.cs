@@ -7,11 +7,13 @@ namespace FinalCap.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class CoursePage : ContentPage
-	{
-	    private CoursesViewModel coursesView;
+    {
+        private readonly CoursesViewModel _viewModel;
 		public CoursePage ()
 		{
 			InitializeComponent ();
+		    
+		    BindingContext = _viewModel = new CoursesViewModel();
 		}
         
 
@@ -21,6 +23,13 @@ namespace FinalCap.View
             if(item == null)
                 return;
 	        
+	    }
+
+	    protected override void OnAppearing()
+	    {
+            base.OnAppearing();
+            if(_viewModel.CourseCollection.Count == 0)
+                _viewModel.LoadCourseCommand.Execute(null);
 	    }
 	}
 }

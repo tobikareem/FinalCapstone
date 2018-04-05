@@ -15,5 +15,6 @@ namespace FinalCap.View
 		    BindingContext = _viewModel = new CoursesViewModel();
 		}
         
+        
 	}
 }

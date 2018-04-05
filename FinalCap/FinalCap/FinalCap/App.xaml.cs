@@ -18,7 +18,7 @@ namespace FinalCap
 
 		    ModelInfo = new SignInfoModel();
 
-		    MainPage = new NavigationPage(new CoursePage());
+		    MainPage = new NavigationPage(new SignIn());
 		   
         }
         

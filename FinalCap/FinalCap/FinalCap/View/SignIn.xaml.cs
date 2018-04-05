@@ -1,4 +1,5 @@
 ﻿
+using System;
 using FinalCap.Model;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -47,6 +48,11 @@ namespace FinalCap.View
 		    }
 
         }
+
+	    private async void ButtonSignIn_OnClicked(object sender, EventArgs e)
+	    {
+	        await Navigation.PushAsync(new CoursePage());
+	    }
 	}
     
 }

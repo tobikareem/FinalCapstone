@@ -156,7 +156,8 @@
                             x:Name="ButtonSignIn"
                         BackgroundColor="#1FBED6"
                         HorizontalOptions="Fill"
-                            IsEnabled="{Binding Path=IsValid}">
+                            IsEnabled="{Binding Path=IsValid}"
+                            Clicked="ButtonSignIn_OnClicked">
                         <Button.Triggers>
                             <MultiTrigger TargetType="Button">
                                 <MultiTrigger.Conditions>

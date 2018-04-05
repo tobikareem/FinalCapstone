@@ -12,7 +12,7 @@ namespace FinalCap.ViewModel
         public event PropertyChangedEventHandler PropertyChanged;
 
         public IDataStore<CoursesModel> DataStore =>
-            DependencyService.Get<IDataStore<CoursesModel>>() ?? new MockDataStore();
+            DependencyService.Get<IDataStore<CoursesModel>>() ?? new CourseDataStore();
 
         private bool _isBusy;
         private string _title = string.Empty;

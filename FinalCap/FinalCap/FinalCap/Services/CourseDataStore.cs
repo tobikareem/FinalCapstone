@@ -6,20 +6,51 @@ using FinalCap.Model;
 
 namespace FinalCap.Services
 {
-    class MockDataStore : IDataStore<CoursesModel>
+    class CourseDataStore : IDataStore<CoursesModel>
     {
         private List<CoursesModel> courses;
 
-        public MockDataStore()
+        public CourseDataStore()
         {
+            
             courses = new List<CoursesModel>();
             var courseItems = new List<CoursesModel>
             {
                 new CoursesModel
                 {
                     Id = Guid.NewGuid().ToString(),
-                    HeadTitle = " 1 day ago - Facebook",
-                    HeadLines = "Samsung SM-T#85s with Android 7.0 gets wifi certifies - GSM Arena News ",
+                    HeadTitle = " Semester Hours: 3 - CSC 2601",
+                    HeadLines = "INTRODUCTION TO ALGORITHM ",
+                    ProfileImage = "hofstra_image.png",
+                    HeadLinesDesc = "Posted by: Vincent Costa" + Environment.NewLine +
+                                    "The Advanced Operating System begins on Tuesday, January 26. In Preparation for the class. please" +
+                                    "do the following: " + Environment.NewLine + "1. Obtain the textbook"
+                },
+
+                new CoursesModel
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    HeadTitle = " Semester Hours: 3 - CSC 300-K",
+                    HeadLines = "INDEPENDENT PROJECTS ",
+                    ProfileImage = "hofstra_image.png",
+                    HeadLinesDesc = "Permission of department and the completion of 21 graduate credits. Credit gigen for only one of " +
+                                    "CSC 300, CSC 301, and CSC 302 0r CSC 303 "
+                },
+
+                new CoursesModel
+                {
+                    HeadTitle = " Semester Hours: 3 - CSC 188-01",
+                    HeadLines = "INTRO TO NETWORK SECURITY ",
+                    ProfileImage = "hofstra_image.png",
+                    HeadLinesDesc = "The Advanced Operating System begins on Tuesday, January 26. In Preparation for the class. please" +
+                                    "do the following: " + Environment.NewLine + "1. Obtain the textbook"
+                },
+
+                new CoursesModel
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    HeadTitle = " Semester Hours: 3 - CSC 258-01",
+                    HeadLines = " MOBILE DEVICE PROGRAMMING ",
                     ProfileImage = "hofstra_image.png",
                     HeadLinesDesc = "Facebook is a social networking service launched on February 4.........Small " +
                                     "samples based on your scenario. Please review my project and let us know "
@@ -28,17 +59,8 @@ namespace FinalCap.Services
                 new CoursesModel
                 {
                     Id = Guid.NewGuid().ToString(),
-                    HeadTitle = " 1 day ago - Facebook",
-                    HeadLines = "Samsung SM-T#85s with Android 7.0 gets wifi certifies - GSM Arena News ",
-                    ProfileImage = "hofstra_image.png",
-                    HeadLinesDesc = "Facebook is a social networking service launched on February 4.........Small " +
-                                    "samples based on your scenario. Please review my project and let us know "
-                },
-
-                new CoursesModel
-                {
-                    HeadTitle = " 1 day ago - Facebook",
-                    HeadLines = "Samsung SM-T#85s with Android 7.0 gets wifi certifies - GSM Arena News ",
+                    HeadTitle = " Semester Hours: 3 - CSC 188-01",
+                    HeadLines = "  INFORMATION RETREIVAL",
                     ProfileImage = "hofstra_image.png",
                     HeadLinesDesc = "Facebook is a social networking service launched on February 4.........Small " +
                                     "samples based on your scenario. Please review my project and let us know "
@@ -47,28 +69,8 @@ namespace FinalCap.Services
                 new CoursesModel
                 {
                     Id = Guid.NewGuid().ToString(),
-                    HeadTitle = " 1 day ago - Facebook",
-                    HeadLines = "Samsung SM-T#85s with Android 7.0 gets wifi certifies - GSM Arena News ",
-                    ProfileImage = "hofstra_image.png",
-                    HeadLinesDesc = "Facebook is a social networking service launched on February 4.........Small " +
-                                    "samples based on your scenario. Please review my project and let us know "
-                },
-
-                new CoursesModel
-                {
-                    Id = Guid.NewGuid().ToString(),
-                    HeadTitle = " 1 day ago - Facebook",
-                    HeadLines = "Samsung SM-T#85s with Android 7.0 gets wifi certifies - GSM Arena News ",
-                    ProfileImage = "hofstra_image.png",
-                    HeadLinesDesc = "Facebook is a social networking service launched on February 4.........Small " +
-                                    "samples based on your scenario. Please review my project and let us know "
-                },
-
-                new CoursesModel
-                {
-                    Id = Guid.NewGuid().ToString(),
-                    HeadTitle = " 1 day ago - Facebook",
-                    HeadLines = "Samsung SM-T#85s with Android 7.0 gets wifi certifies - GSM Arena News ",
+                    HeadTitle = " Semester Hours: 3 - CSC 188-01",
+                    HeadLines = "PROGRAMMING LANG ",
                     ProfileImage = "hofstra_image.png",
                     HeadLinesDesc = "Facebook is a social networking service launched on February 4.........Small " +
                                     "samples based on your scenario. Please review my project and let us know "
