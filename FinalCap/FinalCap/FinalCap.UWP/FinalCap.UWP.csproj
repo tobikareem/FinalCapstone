@@ -104,6 +104,12 @@
     <None Include="FinalCap.UWP_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\hofstra_image.jpg" />
+    <Content Include="hofstra_bd.jpg" />
+    <Content Include="hofstra_image.jpg" />
+    <Content Include="ic_department.png" />
+    <Content Include="ic_lock.png" />
+    <Content Include="ic_user.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-100.png" />
     <Content Include="Assets\LockScreenLogo.scale-125.png" />
@@ -149,7 +155,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="2.5.0.122203" />
-    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.0.1"/>
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.0.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FinalCap\FinalCap.csproj">

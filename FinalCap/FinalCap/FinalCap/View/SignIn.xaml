@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:FinalCap.Model;assembly=FinalCap"
+             x:Class="FinalCap.View.SignIn"
+             NavigationPage.HasBackButton="False"
+             NavigationPage.HasNavigationBar="False">
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <viewmodel:SignInfoModel x:Key="ViewModel" x:Name="Info"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <RelativeLayout>
+        <Image Source="hofstra_image.jpg" Aspect="Fill" Opacity="0.1"
+               RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+               RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}"/>
+
+        <ScrollView RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                    RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}">>
+            <Grid Padding="20, 30, 20, 20" 
+              RowSpacing="20"
+              BindingContext="{StaticResource ViewModel}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Label Text="TobChat" 
+                   FontSize="60"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   Grid.Row="0">
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <OnPlatform.iOS>Marker-Thin</OnPlatform.iOS>
+                            <OnPlatform.Android></OnPlatform.Android>
+                            <OnPlatform.WinPhone></OnPlatform.WinPhone>
+                        </OnPlatform>
+                    </Label.FontFamily>
+                </Label>
+
+                <Grid Grid.Row="2" HorizontalOptions="Fill" Padding="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="ic_user.png"
+                       HeightRequest="40"
+                       VerticalOptions="Center"
+                       Grid.Row="0" Grid.Column="0"/>
+                    <Entry x:Name="EntryId"
+                       Placeholder="Student ID"
+                       BackgroundColor="Transparent"
+                       HorizontalOptions="Fill"
+                       Grid.Row="0" Grid.Column="1"
+                       Text="{Binding Path=StudentId}"/>
+                    
+                    <Switch Grid.Row="0" Grid.Column="0" x:Name="Switchid" IsVisible="False">
+                        <Switch.Triggers>
+                            <DataTrigger TargetType="Switch"
+                                         Binding="{Binding Source={x:Reference Name=EntryId}, Path=Text.Length}" Value="0">
+                                <Setter Property="IsToggled" Value="True"/>
+                            </DataTrigger>
+                        </Switch.Triggers>
+                    </Switch>
+                </Grid>
+                <BoxView HeightRequest="1" Grid.Row="2" HorizontalOptions="Fill" BackgroundColor="White" VerticalOptions="End"/>
+
+                <Grid Grid.Row="3" 
+                  HorizontalOptions="Fill"
+                  Padding="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Source="ic_department.png"
+                       HeightRequest="40"
+                       Grid.Row="0" Grid.Column="0" />
+
+                    <Picker Title="Department"
+                        x:Name="PickerDepartment"
+                        BackgroundColor="Transparent"
+                        HorizontalOptions="Fill"
+                        Grid.Row="0" Grid.Column="1"
+                        SelectedItem="{Binding Path=Department}"/>
+
+                    <Switch Grid.Row="0" Grid.Column="1" IsVisible="False" 
+                            x:Name="SwitchDepartment">
+                        <Switch.Triggers>
+                            <DataTrigger TargetType="Switch"
+                                         Binding="{Binding Source={x:Reference Name=PickerDepartment}, Path=SelectedIndex}" Value="1">
+                                <Setter Property="IsToggled" Value="True"/>
+                            </DataTrigger>
+                        </Switch.Triggers>
+
+                    </Switch>
+
+                </Grid>
+                <BoxView HeightRequest="1" Grid.Row="3" HorizontalOptions="Fill" BackgroundColor="White" VerticalOptions="End"/>
+
+                <Grid Grid.Row="4" 
+                  HorizontalOptions="Fill"
+                  Padding="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Source="ic_lock.png"
+                       HeightRequest="40"
+                       Grid.Row="0" Grid.Column="0" />
+
+                    <Entry Placeholder="Password"
+                           x:Name="EntryPassword"
+                        BackgroundColor="Transparent"
+                        HorizontalOptions="Fill"
+                        Grid.Row="0" Grid.Column="1"
+                        Text="{Binding Path=Password}"  />
+                    
+                    <Switch Grid.Row="0" Grid.Column="1" x:Name="SwitchPassword" IsVisible="False">
+                        <Switch.Triggers>
+                            <DataTrigger TargetType="Switch"
+                                         Binding="{Binding Source={x:Reference Name=EntryPassword}, Path=Text.Length}" Value="0">
+                                <Setter Property="IsToggled" Value="True" />
+                            </DataTrigger>
+                        </Switch.Triggers>
+
+                    </Switch>
+                </Grid>
+                <BoxView HeightRequest="1" Grid.Row="4" HorizontalOptions="Fill" BackgroundColor="White" VerticalOptions="End"/>
+
+                <StackLayout Grid.Row="5"
+                         Spacing="12"
+                         HorizontalOptions="Fill"
+                         Padding="5">
+                    <Button Text="Sign In"
+                            x:Name="ButtonSignIn"
+                        BackgroundColor="#1FBED6"
+                        HorizontalOptions="Fill"
+                            IsEnabled="{Binding Path=IsValid}">
+                        <Button.Triggers>
+                            <MultiTrigger TargetType="Button">
+                                <MultiTrigger.Conditions>
+                                    <BindingCondition Binding="{Binding Source={x:Reference Switchid}, Path=IsToggled}" Value="False"/>
+                                    <BindingCondition Binding="{Binding Source={x:Reference SwitchDepartment}, Path=IsToggled}" Value="False"/>
+                                    <BindingCondition Binding="{Binding Source={x:Reference SwitchPassword}, Path=IsToggled}" Value="False"/>
+                                </MultiTrigger.Conditions>
+                                
+                                <Setter Property="IsEnabled" Value="True"/>
+                            </MultiTrigger>
+                        </Button.Triggers>
+                    </Button>
+                </StackLayout>
+            </Grid>
+        </ScrollView>
+
+    </RelativeLayout>
+</ContentPage>  

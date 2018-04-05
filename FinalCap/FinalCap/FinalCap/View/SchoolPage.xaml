@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModel="clr-namespace:FinalCap.ViewModel;assembly=FinalCap"
+             x:Class="FinalCap.View.SchoolPage">
+  
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <viewModel:StudentBody x:Key="StudentBody"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout BindingContext="{StaticResource StudentBody}">
+            <Label Text="{Binding Path=School}"
+                   HorizontalTextAlignment="Center"
+                   FontSize="Large"
+                   FontAttributes="Bold"/>
+            
+            <ListView x:Name="ListView"
+                      ItemsSource="{Binding Path=Students}"
+                      ItemSelected="OnListViewItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ImageCell ImageSource="{Binding Path=PhotoFile}"
+                                   Text="{Binding FullName}"
+                                   Detail="{Binding GradePoint, StringFormat='G.P.A. = {0:F2}'} "/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

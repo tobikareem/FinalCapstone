@@ -1,20 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+﻿using FinalCap.Model;
+using FinalCap.View;
 using Xamarin.Forms;
 
 namespace FinalCap
 {
-	public partial class App : Application
+    public partial class App : Application
 	{
+        /** A much better way to maintain page state when a page is invoked several times in succession is to
+         * add a property to the App page for the viewmodel class and instantiate that class in the App constructor:
+         */
+
+        public SignInfoModel ModelInfo { get; private set; }
+
 		public App ()
 		{
 			InitializeComponent();
 
-			MainPage = new FinalCap.MainPage();
-		}
+		    ModelInfo = new SignInfoModel();
+
+		    MainPage = new NavigationPage(new CoursePage());
+		   
+        }
+        
 
 		protected override void OnStart ()
 		{

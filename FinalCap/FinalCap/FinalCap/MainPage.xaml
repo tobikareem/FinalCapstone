@@ -1,11 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:FinalCap"
+             xmlns:view="clr-namespace:FinalCap.View;assembly=FinalCap"
              x:Class="FinalCap.MainPage">
+   
+        
+    <TabbedPage.Children>
+        <view:HomePage Title="Courses" Icon="ic_library_books.png"/>
+        <view:NotificationPage Title="Notifications" Icon="ic_notifications.png" />
+        <view:UploadPage Title="Upload" Icon="ic_file_upload.png" />
+        <view:ChatPage Title="Chat" Icon="ic_chat.png" />
+        <view:AccountPage Title="Account" Icon="ic_settings.png" />
+        <view:AboutPage Title="About" Icon="ic_info.png" />
+    </TabbedPage.Children>
 
-	<Label Text="Welcome to Xamarin.Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
-
-</ContentPage>
+</TabbedPage>

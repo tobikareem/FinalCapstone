@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalCap.View.ModelessPage"
+             Title="Modeless Page"
+             NavigationPage.TitleIcon="icon.png">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Welcome to Modeless Page"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            
+            <Button Text="Back to main"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Clicked="GoBackToMain"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

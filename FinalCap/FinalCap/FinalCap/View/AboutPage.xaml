@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModel="clr-namespace:FinalCap.ViewModel;assembly=FinalCap"
+             x:Class="FinalCap.View.AboutPage"
+             Title="About">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <viewModel:AboutViewModel x:Key="AboutViewModel"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid BindingContext="{StaticResource AboutViewModel}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackLayout BackgroundColor="Blue"
+                     VerticalOptions="FillAndExpand"
+                     HorizontalOptions="Fill">
+            <StackLayout Orientation="Horizontal"
+                         HorizontalOptions="Center"
+                         VerticalOptions="Center">
+                <ContentView Padding="0, 40, 0, 40"
+                             VerticalOptions="CenterAndExpand">
+                    <Image Source="hofstra_bd.jpg"
+                           VerticalOptions="Center"
+                           HeightRequest="64" />
+                </ContentView>
+            </StackLayout>
+        </StackLayout>
+
+        <ScrollView Grid.Row="1">
+            <StackLayout Orientation="Vertical"
+                         Padding="16, 40, 16, 40"
+                         Spacing="10">
+                <Label FontSize="22">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="Final Captone" FontAttributes="Bold" FontSize="22"/>
+                                <Span Text=" "/>
+                                <Span Text="1.0" ForegroundColor="LightGray"/>
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="This app is done in Partial fulfillment of my Msc. Degree in Computer Science."/>
+                                <Span Text="The app is written in C# and native APIs using the"/>
+                                <Span Text=" "/>
+                                <Span Text="Xamarin Platform" FontAttributes="Bold"/>
+                                <Span Text="."></Span>
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="The app is developed on multiplatform"/>
+                                <Span Text=" "/>
+                                <Span Text="iOS, Android and Windows Phone" FontAttributes="Bold" />
+                                <Span Text=" "/>
+                                <Span Text="versions."></Span>
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <Button Margin="0, 10, 0, 0" Text="About Me" Command="{Binding Path=OpenWebsiteCommand}"
+                        BackgroundColor="DodgerBlue" TextColor="White"/>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>
