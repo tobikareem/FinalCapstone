@@ -14,16 +14,17 @@ namespace FinalCap.View
 			InitializeComponent ();
 		    
 		    BindingContext = _viewModel = new CoursesViewModel();
-		}
-        
 
-	    private void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
-	    {
-	        var item = e.SelectedItem as CoursesModel;
-            if(item == null)
-                return;
-	        
-	    }
+		    ListView.ItemSelected +=  async (sender,  e) =>
+		    {
+		        if (!(e.SelectedItem is CoursesModel item))
+		            return;
+
+		        await Navigation.PushAsync(new CourseDetailPage(new CourseDetailViewModel(item)));
+
+		    };
+
+		}
 
 	    protected override void OnAppearing()
 	    {

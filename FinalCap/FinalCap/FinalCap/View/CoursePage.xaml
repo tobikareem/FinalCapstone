@@ -17,7 +17,7 @@
                BackgroundColor="Transparent"
                HorizontalOptions="CenterAndExpand"/>
 
-        <ListView x:Name="ListView" ItemSelected="OnItemSelected"
+        <ListView x:Name="ListView"
                   RefreshCommand="{Binding Path=LoadCourseCommand}"
                   IsRefreshing="{Binding Path=IsBusy, Mode=OneWay}"
                   RowHeight="150"

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModel="clr-namespace:FinalCap.ViewModel;assembly=FinalCap"
+             x:Class="FinalCap.View.CourseDetailPage">
+
+    <Frame IsClippedToBounds="True" BackgroundColor="White" HasShadow="True">
+        <Frame.OutlineColor>
+            <OnPlatform x:TypeArguments="Color"
+                            Android="Gray"
+                            iOS="Gray"/>
+        </Frame.OutlineColor>
+        <Frame.Margin>
+            <OnPlatform x:TypeArguments="Thickness"
+                            Android="7"
+                            iOS="7"/>
+        </Frame.Margin>
+        <Frame.Padding>
+            <OnPlatform x:TypeArguments="Thickness"
+                            Android="5"
+                            iOS="5"/>
+        </Frame.Padding>
+
+
+        <StackLayout Spacing="20" Padding="15" Orientation="Vertical">
+            <Label Text="{Binding Path=CoursesModel.HeadTitle}"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" 
+                    FontSize="Medium"/>
+
+            <Label Text="{Binding Path=CoursesModel.HeadLines}"
+                       VerticalOptions="CenterAndExpand"
+                       HorizontalOptions="CenterAndExpand"
+                       FontSize="Small"/>
+        </StackLayout>
+
+    </Frame>
+</ContentPage>

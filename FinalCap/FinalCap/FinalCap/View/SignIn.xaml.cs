@@ -51,7 +51,7 @@ namespace FinalCap.View
 
 	    private async void ButtonSignIn_OnClicked(object sender, EventArgs e)
 	    {
-	        await Navigation.PushAsync(new CoursePage());
+	        await Navigation.PushAsync(new MainPage());
 	    }
 	}
     

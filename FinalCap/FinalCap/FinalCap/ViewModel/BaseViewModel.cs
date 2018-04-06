@@ -7,7 +7,7 @@ using Xamarin.Forms;
 
 namespace FinalCap.ViewModel
 {
-    class BaseViewModel :INotifyPropertyChanged
+    public class BaseViewModel :INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
