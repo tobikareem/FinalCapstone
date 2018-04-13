@@ -30,6 +30,9 @@ namespace FinalCap.View
 		            break;
 		    }
 
+            EntryId.Text = "";
+		    EntryPassword.Text = "";
+
 		    /** Because the viewmodel class is instantiated once in the App class, it maintains
              * the information for the duration of the application. Each new instance of the classes
              * can then simply access the properties and set the viewmodel object to its BindingContext.

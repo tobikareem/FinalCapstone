@@ -14,6 +14,9 @@ namespace FinalCap.ViewModel
         public IDataStore<CoursesModel> DataStore =>
             DependencyService.Get<IDataStore<CoursesModel>>() ?? new CourseDataStore();
 
+        public IDataStore<SignInfoModel> StudentStore =>
+            DependencyService.Get<IDataStore<SignInfoModel>>() ?? new UserDataStore();
+
         private bool _isBusy;
         private string _title = string.Empty;
 

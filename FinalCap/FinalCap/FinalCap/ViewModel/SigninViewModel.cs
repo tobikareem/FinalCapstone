@@ -2,30 +2,34 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using FinalCap.Annotations;
 using FinalCap.Model;
-
+using FinalCap.Services;
 using Xamarin.Forms;
 
 namespace FinalCap.ViewModel
 {
-    class SigninViewModel : INotifyPropertyChanged
+    class SigninViewModel : BaseViewModel
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-        
+        private List<SignInfoModel> _studentList;
+
+        public List<SignInfoModel> StudentList
+        {
+            get => _studentList;
+            set => _studentList = value;
+
+            
+        }
 
         public SigninViewModel()
         {
+            var studentList = new UserDataStore();
+            
         }
         
-
-        [NotifyPropertyChangedInvocator]
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
     }
 }

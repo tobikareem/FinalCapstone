@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewmodel="clr-namespace:FinalCap.Model;assembly=FinalCap"
+             xmlns:viewModel="clr-namespace:FinalCap.ViewModel;assembly=FinalCap"
              x:Class="FinalCap.View.SignIn"
              NavigationPage.HasBackButton="False"
              NavigationPage.HasNavigationBar="False">
@@ -9,6 +10,7 @@
     <ContentPage.Resources>
         <ResourceDictionary>
             <viewmodel:SignInfoModel x:Key="ViewModel" x:Name="Info"/>
+            <!--<viewModel:SigninViewModel x:Key="ViewModel" x:Name="Info"/>-->
         </ResourceDictionary>
     </ContentPage.Resources>
 

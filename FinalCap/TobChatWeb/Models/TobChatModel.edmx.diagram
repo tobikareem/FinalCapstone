@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="dc7b3c2d4c9e4bcbb52a80e5a69efbe8" Name="Diagram1">
+        <EntityTypeShape EntityType="TobChatModel.Course" Width="1.5" PointX="5.25" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TobChatModel.Department" Width="1.5" PointX="0.75" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TobChatModel.Student" Width="1.5" PointX="7.5" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TobChatModel.sysdiagram" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TobChatModel.Teacher" Width="1.5" PointX="3" PointY="6.625" IsExpanded="true" />
+        <AssociationConnector Association="TobChatModel.Course_Department_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="TobChatModel.Course_Student_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="TobChatModel.Course_Teacher_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="TobChatModel.Student_Department_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="TobChatModel.Teacher_Department_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="TobChatModel.Mapping" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
