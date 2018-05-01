@@ -4,8 +4,8 @@
              x:Class="FinalCap.View.NotificationPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
+            <Label Text="Your Notifications."
+                VerticalOptions="StartAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
         </StackLayout>
     </ContentPage.Content>

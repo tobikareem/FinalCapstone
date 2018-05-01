@@ -1,4 +1,5 @@
 ﻿using FinalCap.Model;
+using FinalCap.Services;
 using FinalCap.View;
 using Xamarin.Forms;
 
@@ -11,11 +12,13 @@ namespace FinalCap
          */
 
         public SignInfoModel ModelInfo { get; private set; }
+	    public static string DepartmentUrl = "http://localhost:61073";
+ 
 
-		public App ()
+
+        public App ()
 		{
 			InitializeComponent();
-
 		    ModelInfo = new SignInfoModel();
 
 		    MainPage = new NavigationPage(new SignIn());
